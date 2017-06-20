@@ -35,10 +35,10 @@ namespace Doctor
             men.Add("reportDate", null);    //日期
 
 
-            menType.Add("hb", "result");                      //hb
-            menType.Add("rbc", "resultDesc");                     //rbc
-            menType.Add("plt", "doctorName");                     //plt
-            menType.Add("wbc", "reportDate");                     //wbc
+            menType.Add("zdjg", "result");                      
+            menType.Add("msjg", "resultDesc");                   
+            menType.Add("jcys", "doctorName");                   
+            menType.Add("jcrq", "reportDate");                   
             
         
 
@@ -56,7 +56,7 @@ namespace Doctor
         public string ConvertDataForBC(Dictionary<string, string> data, string id, string serviceCode)
         {
             string url = SysConstUrl.submitBC.Replace("ids11", id);
-            url = SysConstUrl.submitBC.Replace("serviceCode", serviceCode);
+            url = url.Replace("serviceCode", serviceCode);
             foreach (string key in data.Keys) { 
                 string temp = "&"+key+"=";
                 string value = data[key];

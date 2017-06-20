@@ -179,10 +179,10 @@ namespace Doctor
             string url = SysConstUrl.searchBC;
             url = url.Replace("@!", sfz);
             JObject search = http.httpForJson(url);
-            Console.WriteLine(search.ToString());
-            Console.WriteLine(search["models"]);
+            //Console.WriteLine(search.ToString());
+            //Console.WriteLine(search["models"]);
             string ids = search["models"][0]["id"].Value<string>();
-            string serviceCode = search["models"][0]["id"].Value<string>();
+            string serviceCode = search["models"][0]["ps"]["SERVICE_CODE"].Value<string>();
             string mm = search["models"][0]["complete"].Value<string>();
             bool wFlag = mm == "完成" ? true : false;
             //string gg = search["models"][0]["gdLabExamM"]["enumConstByCompleteM"]["name"].ToString();
@@ -194,16 +194,18 @@ namespace Doctor
             //url = url.Replace("ids11", ids);
             //JObject parms = http.httpForJson(url);
             //Console.WriteLine(parms.ToString());
+
             if (wFlag)
             {
                 form1.SetText("已完成不更新:" + no);
                 con.Close();
                 return;
             }
+
             url = DataConvertBC.getInstance().ConvertDataForBC(map, ids, serviceCode);
             if (flag)
             {
-                url += "&iscomplete=1";
+                url += "&yncomplete=1";
             }
             //url = SysConstUrl.submit;
             //url = url.Replace("ids11", ids);

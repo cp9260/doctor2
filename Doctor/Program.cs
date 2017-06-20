@@ -22,7 +22,7 @@ namespace Doctor
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             ILog log = log4net.LogManager.GetLogger("Program");
-            log.Info("222");
+            //log.Info("222");
             //new Sqlservice().test();
             Application.Run(new Form1());
           

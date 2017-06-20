@@ -74,6 +74,7 @@ namespace Doctor
             }
             DataConvertWomen.getInstance();
             DataConvertMen.getInstance();
+            DataConvertBC.getInstance();
             //this.webBrowser1.Navigate("");
            // this.button1.Visible = false;
 

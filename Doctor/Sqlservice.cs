@@ -53,8 +53,8 @@ namespace Doctor
                         
                             string key = str.GetName(n);
                             string value = str.GetValue(n).ToString().Trim();
-                            if (DataConvertWomen.womenType.ContainsKey(key)) {
-                                map.Add(DataConvertWomen.womenType[key],value);
+                            if (DataConvertBC.menType.ContainsKey(key)) {
+                                map.Add(DataConvertBC.menType[key], value);
                             }
                             if (key == "sfz") {
                                 sfz = value;
